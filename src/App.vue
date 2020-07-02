@@ -1,27 +1,35 @@
 <template>
   <div class="container">
-    <header-component></header-component>
-    <hr>
-    <server-main-content></server-main-content>
-    <hr>
-    <footer-component></footer-component>
+    <h1>Choose your exercise app</h1>
+    <button @click="changeEx6Status">Activate</button>
+    <div id="exercise" v-if="ex6state">
+      <ex6app></ex6app>
+    </div>
   </div>
 </template>
 
 <script>
-  import Header from "./components/Header"
-  import MainContent from "./components/MainContent"
-  import Footer from "./components/Footer"
+  import Ex6app from "./components/ex6serverComponents/ex6app"
 
   export default {
     components: {
-      headerComponent: Header,
-      serverMainContent: MainContent,
-      footerComponent: Footer
+      ex6app: Ex6app
+    },
+    data() {
+      return {
+        ex6state: false,
+      };
+    },
+    methods: {
+      changeEx6Status: function() {
+        this.ex6state = !this.ex6state;
+      }
     }
   }
 </script>
 
 <style>
+  #exercise {
 
+  }
 </style>
