@@ -15,22 +15,32 @@
         <ex7app></ex7app>
       </div>
     </div>
+    <div class="exercisePacket">
+      <div>Exercise 8: Using dynamic scopes</div>
+      <button @click="changeEx8Status">Activate</button>
+      <div v-if="ex8status">
+        <ex8app></ex8app>
+      </div>
+    </div>
   </div>
 </template>
 
 <script>
-  import Ex6app from "./components/ex6serverComponents/ex6app"
+  import Ex6app from "./components/ex6serverComponents/Ex6app"
   import Ex7app from "./components/ex7userComponentProps/server/Ex7app";
+  import Ex8app from "@/components/ex8scopes/Ex8app";
 
   export default {
     components: {
       ex7app: Ex7app,
-      ex6app: Ex6app
+      ex6app: Ex6app,
+      ex8app: Ex8app
     },
     data() {
       return {
         ex6state: false,
         ex7Status: false,
+        ex8status: false,
       };
     },
     methods: {
@@ -39,6 +49,9 @@
       },
       changeEx7Status() {
         this.ex7Status = !this.ex7Status;
+      },
+      changeEx8Status() {
+        this.ex8status = !this.ex8status;
       }
     }
   }
