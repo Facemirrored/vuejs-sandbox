@@ -36,6 +36,13 @@
         <ex10app></ex10app>
       </div>
     </div>
+    <div class="row exercisePacket">
+      <div>Exercise 11: Custom Directives</div>
+      <button @click="changeEx11Status">Activate</button>
+      <div v-if="ex11Status">
+        <ex11app></ex11app>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -45,6 +52,7 @@
   import Ex8app from "./components/ex8scopes/Ex8app";
   import Ex9app from "./components/ex9wunderfulQuotes/WunderfulQuotesApp"
   import Ex10app from "@/components/ex10Forms/Ex10FormsApp";
+  import Ex11app from "@/components/ex11CustomDirectives/Ex11CustomDirectivesApp";
 
   export default {
     components: {
@@ -52,7 +60,8 @@
       ex6app: Ex6app,
       ex8app: Ex8app,
       ex9app: Ex9app,
-      ex10app: Ex10app
+      ex10app: Ex10app,
+      ex11app: Ex11app
     },
     data() {
       return {
@@ -60,7 +69,8 @@
         ex7Status: false,
         ex8status: false,
         ex9Status: false,
-        ex10Status: false
+        ex10Status: false,
+        ex11Status: false
       };
     },
     methods: {
@@ -78,6 +88,9 @@
       },
       changeEx10Status() {
         this.ex10Status = !this.ex10Status;
+      },
+      changeEx11Status() {
+        this.ex11Status = !this.ex11Status;
       }
     }
   }
