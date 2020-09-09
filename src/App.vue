@@ -43,6 +43,13 @@
         <ex11app></ex11app>
       </div>
     </div>
+    <div class="row exercisePacket">
+      <div>Exercise 12: Mixins and Filters</div>
+      <button @click="changeEx12Status">Activate</button>
+      <div v-if="ex12Status">
+        <ex12app></ex12app>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -53,6 +60,7 @@
   import Ex9app from "./components/ex9wunderfulQuotes/WunderfulQuotesApp"
   import Ex10app from "@/components/ex10Forms/Ex10FormsApp";
   import Ex11app from "@/components/ex11CustomDirectives/Ex11CustomDirectivesApp";
+  import Ex12app from "@/components/ex12FiltersMixins/Ex12FiltersMixinsApp";
 
   export default {
     components: {
@@ -61,7 +69,8 @@
       ex8app: Ex8app,
       ex9app: Ex9app,
       ex10app: Ex10app,
-      ex11app: Ex11app
+      ex11app: Ex11app,
+      ex12app: Ex12app
     },
     data() {
       return {
@@ -70,7 +79,8 @@
         ex8status: false,
         ex9Status: false,
         ex10Status: false,
-        ex11Status: false
+        ex11Status: false,
+        ex12Status: false
       };
     },
     methods: {
@@ -91,6 +101,9 @@
       },
       changeEx11Status() {
         this.ex11Status = !this.ex11Status;
+      },
+      changeEx12Status() {
+        this.ex12Status = !this.ex12Status;
       }
     }
   }
