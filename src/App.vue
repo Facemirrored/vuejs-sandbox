@@ -59,6 +59,13 @@
         </div>
       </div>
     </div>
+    <div class="row exercisePacket">
+      <div>Exercise 14: HTTP - VueResource</div>
+      <button @click="changeEx14Status">Activate</button>
+      <div v-if="ex14Status">
+        <ex14app></ex14app>
+      </div>
+    </div>
     <div class="container">
       <div class="row">
         <div class="col-lg-12">
@@ -99,71 +106,77 @@
 </template>
 
 <script>
-  import Ex6app from "./components/ex6serverComponents/Ex6app"
-  import Ex7app from "./components/ex7userComponentProps/server/Ex7app";
-  import Ex8app from "./components/ex8scopes/Ex8app";
-  import Ex9app from "./components/ex9wunderfulQuotes/WunderfulQuotesApp"
-  import Ex10app from "@/components/ex10Forms/Ex10FormsApp";
-  import Ex11app from "@/components/ex11CustomDirectives/Ex11CustomDirectivesApp";
-  import Ex12app from "@/components/ex12FiltersMixins/Ex12FiltersMixinsApp";
-  import Ex13app from "./components/ex13Transitions/Ex13app";
+import Ex6app from "./components/ex6serverComponents/Ex6app"
+import Ex7app from "./components/ex7userComponentProps/server/Ex7app";
+import Ex8app from "./components/ex8scopes/Ex8app";
+import Ex9app from "./components/ex9wunderfulQuotes/WunderfulQuotesApp"
+import Ex10app from "@/components/ex10Forms/Ex10FormsApp";
+import Ex11app from "@/components/ex11CustomDirectives/Ex11CustomDirectivesApp";
+import Ex12app from "@/components/ex12FiltersMixins/Ex12FiltersMixinsApp";
+import Ex13app from "./components/ex13Transitions/Ex13app";
+import Ex14app from "@/components/ex14vueResource/Ex14app";
 
-  export default {
-    components: {
-      ex7app: Ex7app,
-      ex6app: Ex6app,
-      ex8app: Ex8app,
-      ex9app: Ex9app,
-      ex10app: Ex10app,
-      ex11app: Ex11app,
-      ex12app: Ex12app,
-      ex13app: Ex13app
+export default {
+  components: {
+    ex7app: Ex7app,
+    ex6app: Ex6app,
+    ex8app: Ex8app,
+    ex9app: Ex9app,
+    ex10app: Ex10app,
+    ex11app: Ex11app,
+    ex12app: Ex12app,
+    ex13app: Ex13app,
+    ex14app: Ex14app
+  },
+  data() {
+    return {
+      ex6state: false,
+      ex7Status: false,
+      ex8status: false,
+      ex9Status: false,
+      ex10Status: false,
+      ex11Status: false,
+      ex12Status: false,
+      ex13Status: false,
+      ex14Status: false
+    };
+  },
+  methods: {
+    changeEx6Status() {
+      this.ex6state = !this.ex6state;
     },
-    data() {
-      return {
-        ex6state: false,
-        ex7Status: false,
-        ex8status: false,
-        ex9Status: false,
-        ex10Status: false,
-        ex11Status: false,
-        ex12Status: false,
-        ex13Status: false
-      };
+    changeEx7Status() {
+      this.ex7Status = !this.ex7Status;
     },
-    methods: {
-      changeEx6Status() {
-        this.ex6state = !this.ex6state;
-      },
-      changeEx7Status() {
-        this.ex7Status = !this.ex7Status;
-      },
-      changeEx8Status() {
-        this.ex8status = !this.ex8status;
-      },
-      changeEx9Status() {
-        this.ex9Status = !this.ex9Status;
-      },
-      changeEx10Status() {
-        this.ex10Status = !this.ex10Status;
-      },
-      changeEx11Status() {
-        this.ex11Status = !this.ex11Status;
-      },
-      changeEx12Status() {
-        this.ex12Status = !this.ex12Status;
-      },
-      changeEx13Status() {
-        this.ex13Status = !this.ex13Status;
-      }
+    changeEx8Status() {
+      this.ex8status = !this.ex8status;
+    },
+    changeEx9Status() {
+      this.ex9Status = !this.ex9Status;
+    },
+    changeEx10Status() {
+      this.ex10Status = !this.ex10Status;
+    },
+    changeEx11Status() {
+      this.ex11Status = !this.ex11Status;
+    },
+    changeEx12Status() {
+      this.ex12Status = !this.ex12Status;
+    },
+    changeEx13Status() {
+      this.ex13Status = !this.ex13Status;
+    },
+    changeEx14Status() {
+      this.ex14Status = !this.ex14Status;
     }
   }
+}
 </script>
 
 <style>
-  .exercisePacket {
-    border: 1px solid black;
-    margin-bottom: 50px;
-    padding: 25px;
-  }
+.exercisePacket {
+  border: 1px solid black;
+  margin-bottom: 50px;
+  padding: 25px;
+}
 </style>
