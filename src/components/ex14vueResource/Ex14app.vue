@@ -42,6 +42,7 @@ export default {
   },
   methods: {
     submit() {
+      // easy way with no additional resource editing
       // this.$http.post("data.json", this.user)
       //     .then(response => {
       //       console.log(response)
@@ -52,19 +53,6 @@ export default {
       this.resource.saveAlt(this.user);
     },
     fetchData() {
-      // this.$http.get("data.json")
-      //     .then(response => {
-      //       return response.json();
-      //     })
-      //     .then(data => {
-      //       const resultArray = [];
-      //       for (let key in data) {
-      //         resultArray.push(data[key]);
-      //       }
-      //       this.users = resultArray;
-      //     }, error => {
-      //       console.log(error)
-      //     });
       this.resource.getData({node: this.node})
           .then(response => {
             return response.json();
