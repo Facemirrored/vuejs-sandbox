@@ -29,9 +29,9 @@
 </template>
 
 <script>
-import Blue from "@/components/ex8scopes/Blue"
-import Green from "@/components/ex8scopes/Green"
-import Red from "@/components/ex8scopes/Red"
+import Blue from "@/components/chapters/ex8scopes/Blue"
+import Green from "@/components/chapters/ex8scopes/Green"
+import Red from "@/components/chapters/ex8scopes/Red"
 
 export default {
   components: {

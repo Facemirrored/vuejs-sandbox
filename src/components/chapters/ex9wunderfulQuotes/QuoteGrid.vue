@@ -11,7 +11,7 @@
 
 <script>
 
-import Quote from '@/components/ex9wunderfulQuotes/Quote'
+import Quote from '@/components/chapters/ex9wunderfulQuotes/Quote'
 
 export default {
   name: "QuoteGrid",

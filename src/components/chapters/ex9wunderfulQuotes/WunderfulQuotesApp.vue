@@ -17,9 +17,9 @@
 </template>
 
 <script>
-import NewQuote from "@/components/ex9wunderfulQuotes/NewQuote";
-import QuoteGrid from "@/components/ex9wunderfulQuotes/QuoteGrid";
-import Header from "@/components/ex9wunderfulQuotes/Header";
+import NewQuote from "@/components/chapters/ex9wunderfulQuotes/NewQuote";
+import QuoteGrid from "@/components/chapters/ex9wunderfulQuotes/QuoteGrid";
+import Header from "@/components/chapters/ex9wunderfulQuotes/Header";
 
 export default {
   components: {

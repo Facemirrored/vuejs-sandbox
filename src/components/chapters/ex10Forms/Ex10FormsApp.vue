@@ -78,7 +78,7 @@
 </template>
 
 <script>
-import CustomNameForm from "@/components/ex10Forms/CustomNameForm";
+import CustomNameForm from "@/components/chapters/ex10Forms/CustomNameForm";
 
 export default {
   components: {
