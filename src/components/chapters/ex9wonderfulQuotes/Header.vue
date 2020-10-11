@@ -1,7 +1,7 @@
 <template>
   <div class="row">
-    <div class="col-sm-12">
-      <h1 class="titel">Wunderful Quotes</h1>
+    <div class="col-sm-12 col-md-8 col-md-offset-2 col-lg-6 col-lg-offset-3 col-xl-4 col-xl-offset-4">
+      <h1 class="titel">Wonderful Quotes</h1>
       <hr>
       <h3>Quotes Added</h3>
       <div class="progress">

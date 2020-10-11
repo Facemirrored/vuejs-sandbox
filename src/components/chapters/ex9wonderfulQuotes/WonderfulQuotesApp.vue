@@ -1,25 +1,25 @@
 <template>
-  <div class="row" style="margin-top: 40px">
+  <div class="container">
     <app-header
-      :quoteCount="quotes.length"
-      :maxQuotes="maxQuotes"
-    ></app-header>
+        :quoteCount="quotes.length"
+        :maxQuotes="maxQuotes"></app-header>
     <hr>
     <app-new-quote @addQuote="newQuote"></app-new-quote>
-    <app-quote-grid :quotes="quotes" @quoteDeleted="deleteQuote">
+    <app-quote-grid
+        :quotes="quotes"
+        @quoteDeleted="deleteQuote"
+        style="margin: 20px">
     </app-quote-grid>
-    <div class="row">
-      <div class="col-sm-12 text-center">
-        <div class="alert alert-info">Info: Click on quote for deletion.</div>
-      </div>
+    <div class="col-sm-12 col-md-8 col-md-offset-2 col-lg-6 col-lg-offset-3 col-xl-4 col-xl-offset-4">
+      <div class="alert alert-info" style="margin-top: 30px">Info: Click on quote for deletion.</div>
     </div>
   </div>
 </template>
 
 <script>
-import NewQuote from "@/components/chapters/ex9wunderfulQuotes/NewQuote";
-import QuoteGrid from "@/components/chapters/ex9wunderfulQuotes/QuoteGrid";
-import Header from "@/components/chapters/ex9wunderfulQuotes/Header";
+import NewQuote from "@/components/chapters/ex9wonderfulQuotes/NewQuote";
+import QuoteGrid from "@/components/chapters/ex9wonderfulQuotes/QuoteGrid";
+import Header from "@/components/chapters/ex9wonderfulQuotes/Header";
 
 export default {
   components: {
@@ -35,7 +35,7 @@ export default {
   },
   methods: {
     newQuote(quote) {
-      if(this.quotes.length >= this.maxQuotes) {
+      if (this.quotes.length >= this.maxQuotes) {
         return alert('Please delete quotes to create new ones :)')
       }
       this.quotes.push({
