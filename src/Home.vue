@@ -31,7 +31,7 @@
           <b-list-group-item class="group-item" to="ex14vue_resource">
             Exercise 14: Vue Resource
           </b-list-group-item>
-          <b-list-group-item class="group-item" to="ex15router_stuff">
+          <b-list-group-item class="group-item" to="ex15RoutingUser">
             Exercise 15: Vue Router
           </b-list-group-item>
         </b-list-group>

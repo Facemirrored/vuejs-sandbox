@@ -4,9 +4,9 @@
       <p>Please select a User</p>
       <hr>
       <ul class="list-group">
-        <li class="list-group-item" style="cursor: pointer">User 1</li>
-        <li class="list-group-item" style="cursor: pointer">User 2</li>
-        <li class="list-group-item" style="cursor: pointer">User 3</li>
+        <router-link tag="li" class="list-group-item" style="cursor: pointer" to="/ex15RoutingUser/1">User 1</router-link>
+        <router-link tag="li" class="list-group-item" style="cursor: pointer" to="/ex15RoutingUser/2">User 2</router-link>
+        <router-link tag="li" class="list-group-item" style="cursor: pointer" to="/ex15RoutingUser/3">User 3</router-link>
       </ul>
     </div>
   </div>
