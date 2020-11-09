@@ -34,6 +34,9 @@
           <b-list-group-item class="group-item" to="ex15RoutingUser">
             Exercise 15: Vue Router
           </b-list-group-item>
+          <b-list-group-item class="group-item" to="ex16vuex">
+            Exercise 16: Vuex
+          </b-list-group-item>
         </b-list-group>
       </div>
     </div>

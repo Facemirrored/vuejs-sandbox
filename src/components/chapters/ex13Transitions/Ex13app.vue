@@ -105,7 +105,7 @@
               name="slide">
             <li
                 class="list-group-item"
-                :key="index"
+                :key="index + 'KEY'"
                 v-for="(number, index) in numbers"
                 @click="removeItem(index)"
                 style="cursor: pointer">{{ number }}
