@@ -7,3 +7,9 @@ export const storeUser = (state, user) => {
   console.log("storeUser Mutation", user);
   state.user = user;
 };
+
+export const clearAuthData = (state) => {
+  state.idToken = null;
+  state.userId = null;
+  state.user = null;
+};

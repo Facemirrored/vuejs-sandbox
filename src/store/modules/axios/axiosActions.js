@@ -1,9 +1,16 @@
 import axios from "./../../../axios-auth"
 import globalaxios from "axios"
 
+export const setLogoutTimer = ({dispatch}, expirationTime) => {
+  setTimeout(() => {
+    console.log("Logout Timer finished");
+    dispatch('logout');
+  }, expirationTime * 1000);
+};
+
 export const signup = ({commit, dispatch}, authData) => {
   axios.post(
-      'signupNewUser?key=AIzaSyDYaiprilZ7gBPjM4UDSuK01oUjBe8UcOE',
+      '/signupNewUser?key=AIzaSyDYaiprilZ7gBPjM4UDSuK01oUjBe8UcOE',
       {
         email: authData.email,
         password: authData.password,
@@ -15,12 +22,19 @@ export const signup = ({commit, dispatch}, authData) => {
       token: response.data.idToken,
       userId: response.data.localId
     });
+    const now = new Date();
+    const expirationDate = new Date(
+        now.getTime() + response.data.expiresIn * 1000);
+    localStorage.setItem('token', response.data.idToken);
+    localStorage.setItem('expiresIn', expirationDate);
+    localStorage.setItem('userId', response.data.userId);
     dispatch('storeUser', authData);
+    dispatch('setLogoutTimer', response.data.expiresIn);
   })
   .catch((error) => console.log("ERROR", error));
 };
 
-export const login = ({commit}, authData) => {
+export const login = ({commit, dispatch}, authData) => {
   axios.post(
       '/verifyPassword?key=AIzaSyDYaiprilZ7gBPjM4UDSuK01oUjBe8UcOE',
       {
@@ -34,8 +48,31 @@ export const login = ({commit}, authData) => {
       token: response.data.idToken,
       userId: response.data.localId
     });
+    const now = new Date();
+    const expirationDate = new Date(
+        now.getTime() + response.data.expiresIn * 1000);
+    localStorage.setItem('token', response.data.idToken);
+    localStorage.setItem('expiresIn', expirationDate);
+    localStorage.setItem('userId', response.data.userId)
+    dispatch('setLogoutTimer', response.data.expiresIn)
+  }).catch((error) => console.log("ERROR", error));
+};
+
+export const tryAutoLogin = ({commit}) => {
+  const token = localStorage.getItem('token');
+  if (!token) {
+    return;
+  }
+
+  const expirationDate = localStorage.getItem('expiresIn')
+  if (new Date() >= expirationDate) {
+    return;
+  }
+
+  commit('authUser', {
+    token: token,
+    userId: localStorage.getItem('userId')
   })
-  .catch((error) => console.log("ERROR", error));
 };
 
 export const storeUser = ({state}, userData) => {
@@ -72,4 +109,11 @@ export const fetchUser = ({commit, state}) => {
   .catch(error => {
     console.log(error)
   })
+};
+
+export const logout = ({commit}) => {
+  localStorage.removeItem('token');
+  localStorage.removeItem('expiresIn');
+  localStorage.removeItem('userId');
+  commit('clearAuthData');
 };

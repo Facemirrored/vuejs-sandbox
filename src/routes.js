@@ -17,6 +17,7 @@ import Welcome from "./components/chapters/ex17AxiosAuth/welcome/Welcome"
 import Signup from "./components/chapters/ex17AxiosAuth/auth/Signup"
 import Signin from "./components/chapters/ex17AxiosAuth/auth/Signin"
 import Dashboard from "./components/chapters/ex17AxiosAuth/dashboard/Dashboard"
+import {store} from "./store/store"
 
 // Lazy Load for more efficiency
 const User = resolve => {
@@ -74,7 +75,18 @@ export const routes = [
       {path: "", name: "welcomePage", component: Welcome},
       {path: '/signup', name: "signupPage", component: Signup},
       {path: '/signin', name: "signinPage", component: Signin},
-      {path: '/dashboard', name: "dashboardPage", component: Dashboard}
+      {
+        path: '/dashboard',
+        name: "dashboardPage",
+        component: Dashboard,
+        beforeEnter(to, from, next) {
+          if (store.state.axiosModule.idToken) {
+            next();
+          } else {
+            next("/signin");
+          }
+        }
+      }
     ]
   },
   {path: "/redirect-me", redirect: {name: "home"}},
