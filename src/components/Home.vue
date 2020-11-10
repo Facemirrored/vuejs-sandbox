@@ -37,6 +37,9 @@
           <b-list-group-item class="group-item" to="ex16vuex">
             Exercise 16: Vuex
           </b-list-group-item>
+          <b-list-group-item class="group-item" to="ex17axios">
+            Exercise 17: Axios
+          </b-list-group-item>
         </b-list-group>
       </div>
     </div>

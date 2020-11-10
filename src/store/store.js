@@ -1,6 +1,7 @@
 import Vue from "vue";
 import Vuex from "vuex"
-import counterModul from "./modules/counterModul"
+import counterModule from "./modules/counterModul"
+import axiosModule from "./modules/axios/axiosModul"
 import * as actions from "./actions"
 import * as mutations from "./mutations"
 import * as getters from "./getters"
@@ -12,7 +13,8 @@ export const store = new Vuex.Store({
     value: 0
   },
   modules: {
-    counterModul: counterModul
+    counterModule: counterModule,
+    axiosModule: axiosModule
   },
   getters,
   mutations,
