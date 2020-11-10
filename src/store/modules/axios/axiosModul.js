@@ -3,7 +3,9 @@ import * as actions from "./axiosActions"
 import * as mutations from "./axiosMutations"
 
 const state = {
-  test: "test"
+  idToken: null,
+  userId: null,
+  user: null
 };
 
 export default {

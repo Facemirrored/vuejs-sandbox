@@ -5,30 +5,30 @@
         <div class="input">
           <label for="email">Mail</label>
           <input
-                  type="email"
-                  id="email"
-                  v-model="email">
+              type="email"
+              id="email"
+              v-model="email">
         </div>
         <div class="input">
           <label for="age">Your Age</label>
           <input
-                  type="number"
-                  id="age"
-                  v-model.number="age">
+              type="number"
+              id="age"
+              v-model.number="age">
         </div>
         <div class="input">
           <label for="password">Password</label>
           <input
-                  type="password"
-                  id="password"
-                  v-model="password">
+              type="password"
+              id="password"
+              v-model="password">
         </div>
         <div class="input">
           <label for="confirm-password">Confirm Password</label>
           <input
-                  type="password"
-                  id="confirm-password"
-                  v-model="confirmPassword">
+              type="password"
+              id="confirm-password"
+              v-model="confirmPassword">
         </div>
         <div class="input">
           <label for="country">Country</label>
@@ -44,14 +44,14 @@
           <button @click="onAddHobby" type="button">Add Hobby</button>
           <div class="hobby-list">
             <div
-                    class="input"
-                    v-for="(hobbyInput, index) in hobbyInputs"
-                    :key="hobbyInput.id">
+                class="input"
+                v-for="(hobbyInput, index) in hobbyInputs"
+                :key="hobbyInput.id">
               <label :for="hobbyInput.id">Hobby #{{ index }}</label>
               <input
-                      type="text"
-                      :id="hobbyInput.id"
-                      v-model="hobbyInput.value">
+                  type="text"
+                  :id="hobbyInput.id"
+                  v-model="hobbyInput.value">
               <button @click="onDeleteHobby(hobbyInput.id)" type="button">X</button>
             </div>
           </div>
@@ -70,7 +70,7 @@
 
 <script>
   export default {
-    data () {
+    data() {
       return {
         email: '',
         age: null,
@@ -82,17 +82,17 @@
       }
     },
     methods: {
-      onAddHobby () {
+      onAddHobby() {
         const newHobby = {
           id: Math.random() * Math.random() * 1000,
           value: ''
-        }
+        };
         this.hobbyInputs.push(newHobby)
       },
-      onDeleteHobby (id) {
+      onDeleteHobby(id) {
         this.hobbyInputs = this.hobbyInputs.filter(hobby => hobby.id !== id)
       },
-      onSubmit () {
+      onSubmit() {
         const formData = {
           email: this.email,
           age: this.age,
@@ -101,8 +101,9 @@
           country: this.country,
           hobbies: this.hobbyInputs.map(hobby => hobby.value),
           terms: this.terms
-        }
-        console.log(formData)
+        };
+        console.log("Submit Signup", formData);
+        this.$store.dispatch('signup', formData);
       }
     }
   }

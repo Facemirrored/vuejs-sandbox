@@ -12,11 +12,11 @@ import Ex12FiltersMixinsApp
 import Ex13app from "./components/chapters/ex13Transitions/Ex13app";
 import Ex14app from "./components/chapters/ex14vueResource/Ex14app";
 import Ex16Vuex from "./components/chapters/ex16Vuex/Ex16Vuex";
-import Ex17Axios from "./components/chapters/ex17Axios/Ex17Axios";
-import Welcome from "./components/chapters/ex17Axios/welcome/Welcome"
-import Signup from "./components/chapters/ex17Axios/auth/Signup"
-import Signin from "./components/chapters/ex17Axios/auth/Signin"
-import Dashboard from "./components/chapters/ex17Axios/dashboard/Dashboard"
+import Ex17Axios from "./components/chapters/ex17AxiosAuth/Ex17AxiosAuth";
+import Welcome from "./components/chapters/ex17AxiosAuth/welcome/Welcome"
+import Signup from "./components/chapters/ex17AxiosAuth/auth/Signup"
+import Signin from "./components/chapters/ex17AxiosAuth/auth/Signin"
+import Dashboard from "./components/chapters/ex17AxiosAuth/dashboard/Dashboard"
 
 // Lazy Load for more efficiency
 const User = resolve => {
